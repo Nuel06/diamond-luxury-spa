@@ -1423,21 +1423,110 @@
     opacity: 1;
   }
 
-  /* ---------- Footer with map ---------- */
+  /* ---------- Footer with visit-us map card ---------- */
 
   .site-footer {
-    background: var(--charcoal);
-    color: var(--white);
+    background: var(--white);
+    color: var(--charcoal);
   }
 
-  .site-footer__map-wrap {
+  .visit-us {
+    padding: 0 8vw 90px;
+  }
+
+  .visit-us__card {
+    max-width: 1180px;
+    margin: 0 auto;
+    background: var(--rose-pale);
+    border: 1px solid rgba(183, 110, 121, 0.18);
+    border-radius: 22px;
+    padding: 64px;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .visit-us__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .visit-us__pin {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+  }
+
+  .visit-us__pin svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--rose);
+    flex-shrink: 0;
+  }
+
+  .visit-us__eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 500;
+  }
+
+  .visit-us__address {
+    font-family: 'Cormorant', serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+    margin-bottom: 30px;
+  }
+
+  .visit-us__directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+    width: fit-content;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--charcoal);
+    transition: color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+  }
+
+  .visit-us__directions svg {
+    width: 13px;
+    height: 13px;
+    transition: transform 0.3s ease;
+  }
+
+  .visit-us__directions:hover {
+    color: var(--rose);
+    border-color: var(--rose);
+    gap: 12px;
+  }
+
+  .visit-us__directions:hover svg {
+    transform: translateX(2px);
+  }
+
+  .visit-us__map {
     width: 100%;
-    height: 380px;
-    filter: grayscale(0.15) contrast(1.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: 340px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px -22px rgba(43, 45, 51, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
 
-  .site-footer__map-wrap iframe {
+  .visit-us__map iframe {
     width: 100%;
     height: 100%;
     border: 0;
@@ -1445,34 +1534,18 @@
   }
 
   .site-footer__bottom {
-    padding: 56px 8vw 44px;
+    padding: 0 8vw 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
     text-align: center;
-  }
-
-  .site-footer__address {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.86rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-  }
-
-  .site-footer__address strong {
-    color: var(--white);
-    font-weight: 500;
-    display: block;
-    margin-bottom: 6px;
-    letter-spacing: 0.02em;
   }
 
   .site-footer__divider {
     width: 32px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(43, 45, 51, 0.15);
   }
 
   .site-footer__copyright {
@@ -1480,7 +1553,7 @@
     font-weight: 300;
     font-size: 0.74rem;
     letter-spacing: 0.02em;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--charcoal-soft);
     max-width: 480px;
     line-height: 1.7;
   }
@@ -1494,10 +1567,21 @@
       padding: 50px 7vw 120px;
     }
 
-    .site-footer__map-wrap {
+    .visit-us {
+      padding: 0 6vw 70px;
+    }
+
+    .visit-us__card {
+      grid-template-columns: 1fr;
+      padding: 48px 40px;
+      gap: 40px;
+    }
+
+    .visit-us__map {
       height: 300px;
     }
   }
+
 
   @media (max-width: 500px) {
     .faq {
@@ -1525,7 +1609,15 @@
       font-size: 1.9rem;
     }
 
-    .site-footer__map-wrap {
+    .visit-us__card {
+      padding: 38px 28px;
+    }
+
+    .visit-us__address {
+      font-size: 1.2rem;
+    }
+
+    .visit-us__map {
       height: 260px;
     }
   }
@@ -1909,32 +2001,57 @@
   </div>
 </section>
 
-<!-- ---------- Footer with map ---------- -->
+<!-- ---------- Visit us: address + map card ---------- -->
+
+<section class="visit-us">
+  <div class="visit-us__card">
+
+    <div class="visit-us__details">
+      <div class="visit-us__pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span class="visit-us__eyebrow">Visit us</span>
+      </div>
+
+      <p class="visit-us__address">
+        32 Bisola Durosinmi Etti Drive,<br>
+        Lekki Phase 1,<br>
+        Lagos, Nigeria
+      </p>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=32%20Bisola%20Durosinmi%20Etti%20Drive%2C%20Lekki%20Phase%201%2C%20Lagos%2C%20Nigeria" target="_blank" rel="noopener" class="visit-us__directions">
+        Get Directions
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <div class="visit-us__map">
+      <iframe
+        src="https://www.google.com/maps?q=32%20Bisola%20Durosinmi%20Etti%20Drive%2C%20Lekki%20Phase%201%2C%20Lagos%2C%20Nigeria&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Diamond Luxury Spa location map">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- ---------- Footer ---------- -->
 
 <footer class="site-footer">
-
-  <div class="site-footer__map-wrap">
-    <iframe
-      src="https://www.google.com/maps?q=32%20Bisola%20Durosinmi%20Etti%20Drive%2C%20Lekki%20Phase%201%2C%20Lagos%2C%20Nigeria&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Diamond Luxury Spa location map">
-    </iframe>
-  </div>
-
   <div class="site-footer__bottom">
-    <p class="site-footer__address">
-      <strong>Diamond Luxury Spa</strong>
-      32 Bisola Durosinmi Etti Drive, Lekki Phase 1, Lagos, Nigeria
-    </p>
-
     <span class="site-footer__divider"></span>
 
     <p class="site-footer__copyright">
       © 2026 Diamond Luxury Spa. All rights reserved. Advanced cosmetics, medispa, and laser therapy.
     </p>
   </div>
-
 </footer>
 
 <script>
