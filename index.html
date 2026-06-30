@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond Luxury Spa | Advanced Aesthetics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Cormorant:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --stone: #F7F5F3;
+    --charcoal: #2B2D33;
+    --charcoal-soft: #6B6D74;
+    --rose: #B76E79;
+    --rose-light: #E8C4C8;
+    --rose-pale: #F3E3E5;
+    --ink-overlay: rgba(20, 16, 18, 0.26);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  /* ---------- Left: copy column ---------- */
+
+  .hero__copy {
+    position: relative;
+    z-index: 3;
+    padding: 0 6vw 0 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.1s;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 400;
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.25s;
+  }
+
+  .hero__headline {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+    max-width: 11ch;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .hero__headline em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero__sub {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--charcoal-soft);
+    font-weight: 300;
+    max-width: 38ch;
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.55s;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.7s;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--rose);
+    color: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 19px 38px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 1px solid var(--rose);
+    transition: background 0.35s ease, color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 8px 24px -8px rgba(183, 110, 121, 0.45);
+  }
+
+  .btn-primary:hover {
+    background: var(--white);
+    color: var(--rose);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -8px rgba(183, 110, 121, 0.55);
+  }
+
+  .btn-primary svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.35s ease;
+  }
+
+  .btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .link-secondary {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .link-secondary::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--charcoal-soft);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    opacity: 0.5;
+    transition: transform 0.35s ease, background 0.35s ease, opacity 0.35s ease;
+  }
+
+  .link-secondary:hover {
+    color: var(--rose);
+  }
+
+  .link-secondary:hover::after {
+    transform: scaleX(1);
+    background: var(--rose);
+    opacity: 1;
+  }
+
+  /* ---------- Right: image column ---------- */
+
+  .hero__visual {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero__ring {
+    position: absolute;
+    width: min(46vw, 620px);
+    height: min(46vw, 620px);
+    border: 1px solid var(--rose);
+    border-radius: 50%;
+    opacity: 0;
+    animation: ringIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.3s;
+    z-index: 1;
+  }
+
+  .hero__image-frame {
+    position: relative;
+    width: 78%;
+    height: 72%;
+    background: linear-gradient(155deg, var(--stone) 0%, #EFEAE6 100%);
+    border-radius: 4px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  .hero__image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    color: var(--charcoal-soft);
+    text-align: center;
+    padding: 40px;
+  }
+
+  .hero__image-placeholder svg {
+    width: 48px;
+    height: 48px;
+    stroke: var(--rose);
+    opacity: 0.6;
+  }
+
+  .hero__image-placeholder span {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+    max-width: 22ch;
+    line-height: 1.6;
+  }
+
+  .hero__caption {
+    position: absolute;
+    bottom: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 14px 26px;
+    border-radius: 999px;
+    box-shadow: 0 12px 32px -10px rgba(43, 45, 51, 0.18);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .hero__caption-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rose);
+    flex-shrink: 0;
+  }
+
+  .hero__caption span {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--charcoal-soft);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  /* ---------- Animations ---------- */
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ringIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__logo, .hero__eyebrow, .hero__headline, .hero__sub,
+    .hero__actions, .hero__ring, .hero__image-frame, .hero__caption {
+      animation: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 980px) {
+    .hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      min-height: auto;
+      padding-top: 64px;
+    }
+
+    .hero__copy {
+      align-items: center;
+      text-align: center;
+      padding: 0 7vw;
+      order: 2;
+      padding-bottom: 72px;
+    }
+
+    .hero__logo {
+      margin-bottom: 36px;
+    }
+
+    .hero__headline {
+      max-width: 16ch;
+    }
+
+    .hero__sub {
+      max-width: 32ch;
+    }
+
+    .hero__actions {
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero__visual {
+      order: 1;
+      height: 64vh;
+      width: 100%;
+    }
+
+    .hero__ring {
+      width: min(78vw, 460px);
+      height: min(78vw, 460px);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero__headline {
+      font-size: 2.5rem;
+      max-width: 14ch;
+    }
+
+    .btn-primary {
+      width: 100%;
+      justify-content: center;
+      padding: 18px 28px;
+    }
+
+    .hero__visual {
+      height: 52vh;
+    }
+
+    .hero__caption span {
+      font-size: 0.62rem;
+    }
+
+    .hero__caption {
+      padding: 11px 18px;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* ====================================================== */
+  /* Section 2: Cinematic spa video + liquid glass overlay   */
+  /* ====================================================== */
+
+  .cinema {
+    position: relative;
+    width: 100%;
+    height: 88vh;
+    min-height: 560px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #3A3128 0%, #1F1A16 55%, #14110F 100%);
+  }
+
+  .cinema__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cinema__scrim {
+    position: absolute;
+    inset: 0;
+    background: var(--ink-overlay);
+    z-index: 1;
+  }
+
+  .cinema__grain {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  /* ---------- Liquid glass card ---------- */
+
+  .glass-card {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(420px, 84vw);
+    padding: 52px 42px 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 18px;
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow:
+      0 30px 60px -20px rgba(0, 0, 0, 0.45),
+      inset 0 1px 1px rgba(255, 255, 255, 0.5);
+
+    opacity: 0;
+    animation: glassIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  .glass-card__icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 22px;
+    stroke: var(--white);
+    opacity: 0.92;
+  }
+
+  .glass-card__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+
+  .glass-card__divider {
+    width: 28px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 16px;
+  }
+
+  .glass-card__sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 22px;
+  }
+
+  .glass-card__proof {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
+  }
+
+  .glass-card__proof strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .glass-card__proof-divider {
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  @keyframes glassIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -42%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glass-card {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (max-width: 980px) {
+    .cinema {
+      height: 78vh;
+      min-height: 480px;
+    }
+
+    .glass-card {
+      width: min(380px, 86vw);
+      padding: 44px 32px 38px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .cinema {
+      height: 70vh;
+      min-height: 420px;
+    }
+
+    .glass-card {
+      padding: 38px 26px 32px;
+    }
+
+    .glass-card__title {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* ====================================================== */
+  /* Section 3: Concerns grid                                */
+  /* ====================================================== */
+
+  .concerns {
+    position: relative;
+    background: var(--white);
+    padding: 130px 8vw 140px;
+    overflow: hidden;
+  }
+
+  /* Soft tonal washes behind the cards so the glass blur has
+     something to actually bend, pure white behind glass reads flat */
+  .concerns__wash {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .concerns__wash span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+  }
+
+  .concerns__wash span:nth-child(1) {
+    width: 360px;
+    height: 360px;
+    top: 8%;
+    left: 6%;
+    background: radial-gradient(circle, var(--rose-pale) 0%, transparent 75%);
+    opacity: 0.7;
+  }
+
+  .concerns__wash span:nth-child(2) {
+    width: 420px;
+    height: 420px;
+    top: 30%;
+    right: 4%;
+    background: radial-gradient(circle, var(--stone) 0%, transparent 75%);
+    opacity: 0.9;
+  }
+
+  .concerns__wash span:nth-child(3) {
+    width: 320px;
+    height: 320px;
+    bottom: 4%;
+    left: 32%;
+    background: radial-gradient(circle, var(--rose-light) 0%, transparent 75%);
+    opacity: 0.45;
+  }
+
+  .concerns__head {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 76px;
+  }
+
+  .concerns__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+  .concerns__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    line-height: 1.25;
+    color: var(--charcoal);
+  }
+
+  .concerns__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .concern-card {
+    position: relative;
+    padding: 46px 34px 40px;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow:
+      0 24px 48px -28px rgba(43, 45, 51, 0.16),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+
+  .concern-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 32px 56px -24px rgba(43, 45, 51, 0.2),
+      inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .concern-card__index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--rose-light);
+    margin-bottom: 26px;
+  }
+
+  .concern-card__index svg {
+    width: 15px;
+    height: 15px;
+    stroke: var(--rose);
+  }
+
+  .concern-card__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .concern-card__desc {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.94rem;
+    line-height: 1.75;
+    color: var(--charcoal-soft);
+  }
+
+  @media (max-width: 980px) {
+    .concerns {
+      padding: 100px 7vw 110px;
+    }
+
+    .concerns__head {
+      margin-bottom: 56px;
+    }
+
+    .concerns__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 460px;
+    }
+
+    .concern-card {
+      padding: 40px 30px 36px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .concerns {
+      padding: 80px 6vw 90px;
+    }
+
+    .concerns__title {
+      font-size: 1.9rem;
+    }
+  }
+
+  /* ====================================================== */
+  /* Section 4: Elite service matrix / treatment menu         */
+  /* ====================================================== */
+
+  .matrix {
+    position: relative;
+    background: var(--stone);
+    padding: 150px 8vw 160px;
+    overflow: hidden;
+  }
+
+  .matrix__wash {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .matrix__wash span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+  }
+
+  .matrix__wash span:nth-child(1) {
+    width: 480px;
+    height: 480px;
+    top: -8%;
+    right: 8%;
+    background: radial-gradient(circle, var(--rose-pale) 0%, transparent 75%);
+    opacity: 0.6;
+  }
+
+  .matrix__wash span:nth-child(2) {
+    width: 380px;
+    height: 380px;
+    bottom: 0%;
+    left: 4%;
+    background: radial-gradient(circle, var(--white) 0%, transparent 75%);
+    opacity: 0.8;
+  }
+
+  .matrix__head {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 80px;
+  }
+
+  .matrix__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+  .matrix__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    line-height: 1.25;
+    color: var(--charcoal);
+  }
+
+  .matrix__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1180px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .service-card {
+    position: relative;
+    padding: 44px 32px 38px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow:
+      0 24px 48px -28px rgba(43, 45, 51, 0.14),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .service-card--featured {
+    padding: 54px 36px 46px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--rose);
+    box-shadow:
+      0 0 0 1px rgba(183, 110, 121, 0.18),
+      0 30px 64px -24px rgba(183, 110, 121, 0.38),
+      inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    transform: scale(1.04);
+  }
+
+  .service-card--featured:hover {
+    transform: scale(1.04) translateY(-6px);
+  }
+
+  .service-card__badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rose);
+    color: var(--white);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px -6px rgba(183, 110, 121, 0.5);
+  }
+
+  .service-card__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.55rem;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .service-card__sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--charcoal-soft);
+    margin-bottom: 28px;
+  }
+
+  .service-card__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 32px;
+    flex-grow: 1;
+  }
+
+  .service-card__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.86rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.5;
+  }
+
+  .service-card__features svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--rose);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .service-card__price-row {
+    border-top: 1px solid rgba(43, 45, 51, 0.1);
+    padding-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  .service-card__price-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .service-card__price-value {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--rose);
+    font-weight: 400;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 15px 0;
+    border-radius: 999px;
+    border: 1px solid rgba(43, 45, 51, 0.3);
+    text-decoration: none;
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--rose);
+    color: var(--rose);
+    background: rgba(183, 110, 121, 0.06);
+  }
+
+  .btn-primary--block {
+    width: 100%;
+    justify-content: center;
+    padding: 17px 0;
+  }
+
+  @media (max-width: 980px) {
+    .matrix {
+      padding: 110px 7vw 120px;
+    }
+
+    .matrix__head {
+      margin-bottom: 56px;
+    }
+
+    .matrix__grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      max-width: 440px;
+    }
+
+    .service-card--featured {
+      transform: scale(1);
+      order: -1;
+    }
+
+    .service-card--featured:hover {
+      transform: translateY(-6px);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .matrix {
+      padding: 90px 6vw 100px;
+    }
+
+    .matrix__title {
+      font-size: 1.9rem;
+    }
+
+    .service-card,
+    .service-card--featured {
+      padding: 40px 26px 34px;
+    }
+  }
+
+  /* ====================================================== */
+  /* Section 5: Editorial client testimonials                 */
+  /* ====================================================== */
+
+  .testimonials {
+    position: relative;
+    background: var(--white);
+    padding: 150px 8vw 160px;
+    overflow: hidden;
+  }
+
+  .testimonials__wash {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .testimonials__wash span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+  }
+
+  .testimonials__wash span:nth-child(1) {
+    width: 420px;
+    height: 420px;
+    top: 0%;
+    left: -4%;
+    background: radial-gradient(circle, var(--stone) 0%, transparent 75%);
+    opacity: 0.8;
+  }
+
+  .testimonials__wash span:nth-child(2) {
+    width: 380px;
+    height: 380px;
+    bottom: -6%;
+    right: 0%;
+    background: radial-gradient(circle, var(--rose-pale) 0%, transparent 75%);
+    opacity: 0.55;
+  }
+
+  .testimonials__head {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 88px;
+  }
+
+  .testimonials__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+  .testimonials__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    line-height: 1.25;
+    color: var(--charcoal);
+  }
+
+  .testimonials__sample-note {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+    opacity: 0.65;
+    max-width: 480px;
+    margin: -56px auto 56px;
+  }
+
+  .testimonials__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    position: relative;
+    padding: 56px 46px 44px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow:
+      0 28px 56px -30px rgba(43, 45, 51, 0.14),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  }
+
+  .testimonial-card__sample-tag {
+    position: absolute;
+    top: -12px;
+    left: 46px;
+    background: var(--stone);
+    border: 1px solid rgba(43, 45, 51, 0.12);
+    color: var(--charcoal-soft);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 999px;
+  }
+
+  .testimonial-card__stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 28px;
+  }
+
+  .testimonial-card__stars svg {
+    width: 15px;
+    height: 15px;
+    fill: var(--rose);
+    stroke: none;
+  }
+
+  .testimonial-card__quote {
+    font-family: 'Jost', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+  }
+
+  .testimonial-card__footer {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(43, 45, 51, 0.1);
+    padding-top: 22px;
+  }
+
+  .testimonial-card__name {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+
+  .testimonial-card__badge {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--charcoal-soft);
+    opacity: 0.75;
+  }
+
+  @media (max-width: 980px) {
+    .testimonials {
+      padding: 110px 7vw 120px;
+    }
+
+    .testimonials__head {
+      margin-bottom: 64px;
+    }
+
+    .testimonials__sample-note {
+      margin: -42px auto 48px;
+    }
+
+    .testimonials__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 480px;
+    }
+
+    .testimonial-card {
+      padding: 48px 36px 38px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .testimonials {
+      padding: 90px 6vw 100px;
+    }
+
+    .testimonials__title {
+      font-size: 1.9rem;
+    }
+
+    .testimonial-card {
+      padding: 42px 28px 32px;
+    }
+
+    .testimonial-card__quote {
+      font-size: 1rem;
+    }
+  }
+
+  /* ====================================================== */
+  /* Section 6: FAQ accordion + closing CTA + footer/map      */
+  /* ====================================================== */
+
+  .faq {
+    position: relative;
+    background: var(--stone);
+    padding: 140px 8vw 100px;
+  }
+
+  .faq__head {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 64px;
+  }
+
+  .faq__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+  .faq__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    line-height: 1.25;
+    color: var(--charcoal);
+  }
+
+  .faq__list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    overflow: hidden;
+  }
+
+  .faq-item__question {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 26px 30px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 0.98rem;
+    color: var(--charcoal);
+  }
+
+  .faq-item__icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    position: relative;
+  }
+
+  .faq-item__icon::before,
+  .faq-item__icon::after {
+    content: '';
+    position: absolute;
+    background: var(--rose);
+    transition: transform 0.35s ease;
+  }
+
+  .faq-item__icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  .faq-item__icon::after {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .faq-item[data-open="true"] .faq-item__icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+  }
+
+  .faq-item__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .faq-item__answer-inner {
+    padding: 0 30px 28px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--charcoal-soft);
+  }
+
+  /* ---------- Closing CTA ---------- */
+
+  .close-cta {
+    position: relative;
+    background: var(--white);
+    padding: 60px 8vw 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-cta__card {
+    text-align: center;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .close-cta__logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 36px;
+  }
+
+  .close-cta__title {
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: clamp(2.1rem, 4vw, 2.8rem);
+    color: var(--charcoal);
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+
+  .close-cta .btn-primary {
+    padding: 21px 0;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    font-size: 0.82rem;
+  }
+
+  .close-cta__return {
+    margin-top: 26px;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+  }
+
+  .close-cta__return::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--charcoal-soft);
+    transform: scaleX(0.3);
+    opacity: 0.5;
+    transition: transform 0.35s ease, background 0.35s ease, opacity 0.35s ease;
+  }
+
+  .close-cta__return:hover {
+    color: var(--rose);
+  }
+
+  .close-cta__return:hover::after {
+    transform: scaleX(1);
+    background: var(--rose);
+    opacity: 1;
+  }
+
+  /* ---------- Footer with map ---------- */
+
+  .site-footer {
+    background: var(--charcoal);
+    color: var(--white);
+  }
+
+  .site-footer__map-wrap {
+    width: 100%;
+    height: 380px;
+    filter: grayscale(0.15) contrast(1.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .site-footer__map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .site-footer__bottom {
+    padding: 56px 8vw 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .site-footer__address {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .site-footer__address strong {
+    color: var(--white);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .site-footer__divider {
+    width: 32px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .site-footer__copyright {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.74rem;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 980px) {
+    .faq {
+      padding: 110px 7vw 90px;
+    }
+
+    .close-cta {
+      padding: 50px 7vw 120px;
+    }
+
+    .site-footer__map-wrap {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .faq {
+      padding: 90px 6vw 80px;
+    }
+
+    .faq__title {
+      font-size: 1.9rem;
+    }
+
+    .faq-item__question {
+      padding: 22px 22px;
+      font-size: 0.9rem;
+    }
+
+    .faq-item__answer-inner {
+      padding: 0 22px 24px;
+    }
+
+    .close-cta {
+      padding: 40px 6vw 100px;
+    }
+
+    .close-cta__title {
+      font-size: 1.9rem;
+    }
+
+    .site-footer__map-wrap {
+      height: 260px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+  <div class="hero__copy">
+    <img class="hero__logo" src="data:image/jpeg;base64,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" alt="Diamond Luxury Spa logo">
+
+    <p class="hero__eyebrow">Cosmetics &nbsp;·&nbsp; Medispa &nbsp;·&nbsp; Laser</p>
+
+    <h1 class="hero__headline">Advanced Aesthetics. <em>Expert Precision.</em></h1>
+
+    <p class="hero__sub">
+      Experience transformative results with our curated medical aesthetic, laser, and advanced skincare solutions.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#consultation" class="btn-primary">
+        Book Your Consultation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href="#treatments" class="link-secondary">Explore Treatments</a>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <div class="hero__ring" aria-hidden="true"></div>
+
+    <div class="hero__image-frame">
+      <div class="hero__image-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="3" y="3" width="18" height="18" rx="1"></rect>
+          <circle cx="9" cy="9" r="2"></circle>
+          <path d="M21 15l-5-5L5 21"></path>
+        </svg>
+        <span>High resolution clinic or skincare imagery goes here</span>
+      </div>
+    </div>
+
+    <div class="hero__caption">
+      <span class="hero__caption-dot"></span>
+      <span>Lekki, Lagos &nbsp;·&nbsp; By appointment</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- Section 2: Cinematic spa video + liquid glass overlay   -->
+<!-- ====================================================== -->
+
+<section class="cinema">
+
+  <video class="cinema__media" autoplay muted loop playsinline>
+    <source src="dls-spa-loop.mp4" type="video/mp4">
+  </video>
+
+  <div class="cinema__scrim"></div>
+  <div class="cinema__grain"></div>
+
+  <div class="glass-card">
+    <svg class="glass-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M12 2 L17 9 L12 22 L7 9 Z"></path>
+      <path d="M7 9 L17 9"></path>
+    </svg>
+
+    <h2 class="glass-card__title">Your private skin sanctuary</h2>
+
+    <div class="glass-card__divider"></div>
+
+    <p class="glass-card__sub">Best spa in Lekki, Nigeria</p>
+
+    <div class="glass-card__proof">
+      <span><strong>10.1k</strong> followers</span>
+      <span class="glass-card__proof-divider"></span>
+      <span><strong>1,335</strong> sessions shared</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- Section 3: Concerns grid                                 -->
+<!-- ====================================================== -->
+
+<section class="concerns">
+
+  <div class="concerns__wash" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="concerns__head">
+    <p class="concerns__eyebrow">What we treat</p>
+    <h2 class="concerns__title">Targeted solutions for your skin concerns</h2>
+  </div>
+
+  <div class="concerns__grid">
+
+    <div class="concern-card">
+      <span class="concern-card__index" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M4 12 Q9 6 12 12 T20 12"></path>
+        </svg>
+      </span>
+      <h3 class="concern-card__title">Fine lines & wrinkles</h3>
+      <p class="concern-card__desc">Diminish the appearance of aging and restore youthful vitality with our advanced, non-surgical wrinkle relaxers.</p>
+    </div>
+
+    <div class="concern-card">
+      <span class="concern-card__index" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="12" y1="2" x2="12" y2="5"></line>
+          <line x1="12" y1="19" x2="12" y2="22"></line>
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line>
+        </svg>
+      </span>
+      <h3 class="concern-card__title">Sun damage & pigment</h3>
+      <p class="concern-card__desc">Even out skin tone and clear away sunspots utilizing state-of-the-art laser resurfacing technology.</p>
+    </div>
+
+    <div class="concern-card">
+      <span class="concern-card__index" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3 L20 9 L20 16 L12 21 L4 16 L4 9 Z"></path>
+        </svg>
+      </span>
+      <h3 class="concern-card__title">Volume loss & contouring</h3>
+      <p class="concern-card__desc">Redefine your natural features, restore lost structural volume, and lift sagging skin with premium dermal fillers.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- Section 4: Elite service matrix / treatment menu          -->
+<!-- ====================================================== -->
+
+<section class="matrix">
+
+  <div class="matrix__wash" aria-hidden="true">
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="matrix__head">
+    <p class="matrix__eyebrow">Curated treatment experience</p>
+    <h2 class="matrix__title">Our signature interventions</h2>
+  </div>
+
+  <div class="matrix__grid">
+
+    <!-- Card 1: Precision Injectables -->
+    <div class="service-card">
+      <h3 class="service-card__title">Precision injectables</h3>
+      <p class="service-card__sub">Restore volume and unlock timeless symmetry.</p>
+
+      <ul class="service-card__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Premium wrinkle relaxers
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Advanced dermal fillers
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Bespoke facial contouring
+        </li>
+      </ul>
+
+      <div class="service-card__price-row">
+        <p class="service-card__price-label">Investment</p>
+        <p class="service-card__price-value">Pricing available on consultation</p>
+      </div>
+
+      <a href="#contact" class="btn-outline">View Details</a>
+    </div>
+
+    <!-- Card 2: Advanced Laser Resurfacing (featured) -->
+    <div class="service-card service-card--featured">
+      <span class="service-card__badge">Signature Service</span>
+      <h3 class="service-card__title">Advanced laser resurfacing</h3>
+      <p class="service-card__sub">Flawless clarity powered by elite light technology.</p>
+
+      <ul class="service-card__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Target pigmentation & sun damage
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Precision skin texture refinement
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Non-invasive collagen remodeling
+        </li>
+      </ul>
+
+      <div class="service-card__price-row">
+        <p class="service-card__price-label">Investment</p>
+        <p class="service-card__price-value">Pricing available on consultation</p>
+      </div>
+
+      <a href="#consultation" class="btn-primary btn-primary--block">Book Treatment</a>
+    </div>
+
+    <!-- Card 3: Clinical Skincare Rituals -->
+    <div class="service-card">
+      <h3 class="service-card__title">Clinical skincare rituals</h3>
+      <p class="service-card__sub">Medical-grade rejuvenation meets pure tranquility.</p>
+
+      <ul class="service-card__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Advanced chemical peels
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Deep-infusion hydro-facials
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Cellular renewal therapy
+        </li>
+      </ul>
+
+      <div class="service-card__price-row">
+        <p class="service-card__price-label">Investment</p>
+        <p class="service-card__price-value">Pricing available on consultation</p>
+      </div>
+
+      <a href="#contact" class="btn-outline">View Details</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- Section 5: Editorial client testimonials                  -->
+<!-- ====================================================== -->
+
+<section class="testimonials">
+
+  <div class="testimonials__wash" aria-hidden="true">
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="testimonials__head">
+    <p class="testimonials__eyebrow">Client experiences</p>
+    <h2 class="testimonials__title">Real transformation, verified results</h2>
+  </div>
+
+  <p class="testimonials__sample-note">
+    Sample layout shown below. Awaiting real client testimonials from Diamond Luxury Spa to replace these placeholders before launch.
+  </p>
+
+  <div class="testimonials__grid">
+
+    <div class="testimonial-card">
+      <span class="testimonial-card__sample-tag">Sample testimonial</span>
+
+      <div class="testimonial-card__stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+      </div>
+
+      <p class="testimonial-card__quote">"This is where a real client quote about laser resurfacing or skin transformation will go, written in their own words once Diamond Luxury Spa shares it with us."</p>
+
+      <div class="testimonial-card__footer">
+        <span class="testimonial-card__name">Client name pending</span>
+        <span class="testimonial-card__badge">Awaiting verified testimonial</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <span class="testimonial-card__sample-tag">Sample testimonial</span>
+
+      <div class="testimonial-card__stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.8 9 L16.2 13.4 L18.2 20.4 L12 16.4 L5.8 20.4 L7.8 13.4 L2.2 9 L9.4 8.6 Z"></path></svg>
+      </div>
+
+      <p class="testimonial-card__quote">"A second client quote will sit here, perhaps about precision injectables or another signature treatment, once we have permission to feature it."</p>
+
+      <div class="testimonial-card__footer">
+        <span class="testimonial-card__name">Client name pending</span>
+        <span class="testimonial-card__badge">Awaiting verified testimonial</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- Section 6: FAQ accordion + closing CTA + footer/map       -->
+<!-- ====================================================== -->
+
+<section class="faq">
+
+  <div class="faq__head">
+    <p class="faq__eyebrow">Common inquiries</p>
+    <h2 class="faq__title">Answering your questions</h2>
+  </div>
+
+  <div class="faq__list">
+
+    <div class="faq-item" data-open="false">
+      <button class="faq-item__question" data-faq-toggle>
+        Is a baseline skin consultation required before booking?
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__answer">
+        <p class="faq-item__answer-inner">Yes. To ensure safety and deliver optimal precision, every new client undergoes a comprehensive facial anatomy and skin health assessment before any clinical intervention is administered.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-open="false">
+      <button class="faq-item__question" data-faq-toggle>
+        Who administers the medical and laser treatments?
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__answer">
+        <p class="faq-item__answer-inner">All advanced aesthetic, injectable, and laser procedures at Diamond Luxury Spa are performed exclusively by licensed, board-certified medical clinicians and elite aesthetic specialists.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-open="false">
+      <button class="faq-item__question" data-faq-toggle>
+        What is the cancellation and rescheduling policy?
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__answer">
+        <p class="faq-item__answer-inner">We reserve dedicated, structural time for each private sanctuary appointment. We kindly request a minimum of 24 hours' notice for any cancellations or scheduling adjustments.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ---------- Closing CTA ---------- -->
+
+<section class="close-cta">
+  <div class="close-cta__card">
+    <img class="close-cta__logo" src="data:image/jpeg;base64,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" alt="Diamond Luxury Spa logo">
+
+    <h2 class="close-cta__title">Begin Your Transformation</h2>
+
+    <a href="#consultation" class="btn-primary">
+      Schedule Your Private Consultation
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+
+    <a href="#top" class="close-cta__return">Return to top</a>
+  </div>
+</section>
+
+<!-- ---------- Footer with map ---------- -->
+
+<footer class="site-footer">
+
+  <div class="site-footer__map-wrap">
+    <iframe
+      src="https://www.google.com/maps?q=32%20Bisola%20Durosinmi%20Etti%20Drive%2C%20Lekki%20Phase%201%2C%20Lagos%2C%20Nigeria&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Diamond Luxury Spa location map">
+    </iframe>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p class="site-footer__address">
+      <strong>Diamond Luxury Spa</strong>
+      32 Bisola Durosinmi Etti Drive, Lekki Phase 1, Lagos, Nigeria
+    </p>
+
+    <span class="site-footer__divider"></span>
+
+    <p class="site-footer__copyright">
+      © 2026 Diamond Luxury Spa. All rights reserved. Advanced cosmetics, medispa, and laser therapy.
+    </p>
+  </div>
+
+</footer>
+
+<script>
+  document.querySelectorAll('[data-faq-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-item__answer');
+      var isOpen = item.getAttribute('data-open') === 'true';
+
+      // Close any other open items for a clean single-open accordion feel
+      document.querySelectorAll('.faq-item[data-open="true"]').forEach(function (openItem) {
+        if (openItem !== item) {
+          openItem.setAttribute('data-open', 'false');
+          openItem.querySelector('.faq-item__answer').style.maxHeight = '0px';
+        }
+      });
+
+      if (isOpen) {
+        item.setAttribute('data-open', 'false');
+        answer.style.maxHeight = '0px';
+      } else {
+        item.setAttribute('data-open', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
